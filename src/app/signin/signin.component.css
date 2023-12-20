@@ -1,0 +1,31 @@
+form.container {
+    font-family: var(--body-font);
+    width: 600px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -4px gray;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+button.btn {
+    margin: 0 15px;
+    width: 140px;
+    border-radius: 5px !important;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 4px;
+} 
+.form-group{
+    margin: 10px 20px;
+}
+h1{
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--body-font);
+}

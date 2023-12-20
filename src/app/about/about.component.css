@@ -1,0 +1,40 @@
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 32px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 3px;
+    margin: 0 0 16px;
+}
+.c{
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+.c .container {
+    width: 80%;
+}
+img{
+    width:-webkit-fill-available;
+}
+p{
+    padding: 10px 50px;
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: larger;
+    line-height: 25px;
+}
+ul {
+    list-style-type: none;
+}
+h2{
+    font-size: 26px;
+}
+li{
+    font-size: 20px;
+    line-height: 25px;
+    padding: 7px 15px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}

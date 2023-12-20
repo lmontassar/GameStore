@@ -1,0 +1,85 @@
+.desh-list{
+    list-style-type: none;
+    padding: 0;
+    width: 250px;
+  }
+  .desh-list li {
+  background-color: #4e6e8f;
+  margin: 20px;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  border-radius: 5px; 
+  cursor: pointer;
+  transition: 0.3s;
+}
+.desh-list li.clicked{
+  background-color: #0071e5;
+  transition: 0.3s;
+}
+.desh-list li:hover{
+  background-color: #4f8ac7;
+  transition: 0.3s;
+}
+.ccompt {
+  padding: 0 40px 0 40px;
+  margin-bottom: 50px;
+  }
+.c {
+    margin-top: 100px; 
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+    justify-content: center;
+}
+table{
+  box-shadow: none;
+}
+
+.edit {
+    font-family: var(--body-font);
+    width: 600px;
+    margin-bottom: 50px;
+    padding: 40px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -4px gray;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+button.btn {
+    margin: 0 15px;
+    width: 140px;
+    border-radius: 5px !important;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 4px;
+} 
+.form-group{
+    margin: 10px 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .desh-list{
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .clist{
+    width: 100%;
+  }
+  .ccompt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

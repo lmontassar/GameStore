@@ -1,0 +1,102 @@
+<div class="c container">
+
+
+
+    <div class="clist">
+        <ul class="desh-list">
+            <li [class.clicked]="edit == 'name'" (click)="Editto('name')">Full Name</li>
+            <li [class.clicked]="edit == 'email'" (click)="Editto('email')">Email</li>
+            <li [class.clicked]="edit == 'password'" (click)="Editto('password')">password</li>
+        </ul>
+    </div>
+
+
+    <div class="ccompt">
+        <div class="edit" *ngIf=" edit !== '' ">
+
+            <div class="alert alert-dismissible m-0 mt-4 alert-{{type_message}}" *ngIf="any_message">{{message}}</div>
+
+            <span *ngIf=" edit == 'name' ">
+                <div class="form-group">
+                    <fieldset>
+                        <label class="form-label mt-4">Your First Name*</label>
+                        <input class="form-control" type="text" placeholder="First Name" #firstname="ngModel"
+                            [(ngModel)]="Modif.firstname"
+                            [class.is-invalid]="firstname.touched && !testn( Modif.firstname ) ">
+                        <div class="invalid-feedback">Please write a valid firstname</div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <label class="form-label mt-4">Your Last Name*</label>
+                        <input class="form-control" type="text" placeholder="Last Name" #lastname="ngModel"
+                            [(ngModel)]="Modif.lastname"
+                            [class.is-invalid]="lastname.touched && !testn( Modif.lastname ) ">
+                        <div class="invalid-feedback">Please write a valid lastname</div>
+                    </fieldset>
+                </div>
+                <br>
+                <div class="div-login">
+                    <div class="btns">
+                        <button type="reset" class="btn btn-danger">RESET</button>
+                        <button type="button" class="btn btn-dark" (click)="change()"
+                        [disabled]="!testn( firstname.value ) || !testn( lastname.value )"
+                        >EDIT</button>
+                    </div>
+                </div>
+            </span>
+
+            <span *ngIf=" edit == 'email' ">
+                <div class="form-group">
+                    <fieldset>
+                        <label class="form-label mt-4">Your Email*</label>
+                        <input class="form-control" type="email" placeholder="@Email" #email="ngModel"
+                            [(ngModel)]="Modif.email" [class.is-invalid]="email.touched && !teste( Modif.email )">
+                        <div class="invalid-feedback">Please write a valid lastname</div>
+                    </fieldset>
+                </div>
+                <br>
+                <div class="div-login">
+                    <div class="btns">
+                        <button type="reset" class="btn btn-danger">RESET</button>
+                        <button type="button" class="btn btn-dark" (click)="change()"
+                        [disabled]="!teste( email.value ) "
+                        >EDIT</button>
+                    </div>
+                </div>
+            </span>
+
+            <span *ngIf=" edit == 'password' ">
+                <div class="form-group">
+                    <fieldset>
+                        <label class="form-label mt-4">Current Password</label>
+                        <input class="form-control" type="password" placeholder="Password" #curr_pass="ngModel"
+                            [(ngModel)]="currpass" [class.is-invalid]="curr_pass.touched && !testp( currpass )">
+                        <div class="invalid-feedback">Please write a valid password</div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <label class="form-label mt-4">New Password</label>
+                        <input class="form-control" type="password" placeholder="Password" #password="ngModel"
+                            [(ngModel)]="newpass" [class.is-invalid]="password.touched && !testp( newpass )">
+                        <br>
+                        <div class="invalid-feedback">Please write a strong password</div>
+                        <input class="form-control" type="password" placeholder="RE-TYPE Password" #re_pass="ngModel"
+                            [(ngModel)]="repass" [class.is-invalid]="re_pass.touched && repass != newpass">
+                        <div class="invalid-feedback">Please retype the same password</div>
+                    </fieldset>
+                </div>
+                <br>
+                <div class="div-login">
+                    <div class="btns">
+                        <button type="reset" class="btn btn-danger">RESET</button>
+                        <button type="button" class="btn btn-dark" (click)="change()"
+                        [disabled]="!testp( currpass ) || !testp( newpass ) || repass != newpass "
+                        >EDIT</button>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>

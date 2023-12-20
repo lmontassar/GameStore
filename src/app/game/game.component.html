@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="image">
+        <img src="{{game.image}}" alt="">
+    </div>
+    <div class="info">
+        <span class="name">{{game.name}}</span>
+        <div>
+            <span class="type">{{game.type}}</span>
+            <span class="year" align="right">{{game.year}}</span>
+        </div>
+        <span class="price" align="right">{{game.price}}$</span>
+        <span class="description">{{game.description}}</span>
+        <div class="cart" (click)="addtocart(game.id)" *ngIf="!buyed">{{ btn }}</div> 
+        <span class="key" *ngIf="buyed">key : {{game.key}} </span>
+    </div>
+</div>

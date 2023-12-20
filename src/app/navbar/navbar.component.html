@@ -1,0 +1,42 @@
+
+<nav class="navbar  navbar-expand-lg bg-light py-4" data-bs-theme="light">
+    <div class="container-fluid container">
+      <a class="navbar-brand" routerLink="/home">GameStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" *ngIf="userser.user1 !== null ">
+            <a class="nav-link" [class.active]="navbarser.focus == 1" routerLink="/home" >Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="userser.user1 !== null && userser.user1.admin ">
+            <a class="nav-link" [class.active]="navbarser.focus == 2" routerLink="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="userser.user1 !== null">
+            <a class="nav-link" [class.active]="navbarser.focus == 3" routerLink="/myGames">my Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="navbarser.focus == 4" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item"  *ngIf="userser.user1 === null ">
+            <a class="nav-link" [class.active]="navbarser.focus == 5" routerLink="/login" >Login</a>
+          </li>
+          <li class="nav-item" *ngIf="userser.user1 === null ">
+            <a class="nav-link" [class.active]="navbarser.focus == 6" routerLink="/signin" >Sign-in</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="userser.user1 !== null ">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/Profile">Profile</a>
+              <a class="dropdown-item" routerLink="/cart">cart</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>  

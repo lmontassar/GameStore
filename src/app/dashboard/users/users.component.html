@@ -1,0 +1,54 @@
+<table mat-table [dataSource]="userser.users" class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>N°</th>
+      <td mat-cell *matCellDef="let post;let i = index;">{{i+1}}</td>
+    </ng-container>
+  
+    <!-- NAME Column -->
+    <ng-container matColumnDef="fullname">
+      <th mat-header-cell *matHeaderCellDef>FULLNAME</th>
+      <td mat-cell *matCellDef="let post">{{post.firstname}} {{post.lastname}}</td>
+    </ng-container>
+  
+    <!-- DESCRIPTION Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>DESCRIPTION</th>
+      <td mat-cell *matCellDef="let post">{{post.email}}</td>
+    </ng-container>
+  
+    <!-- TYPE Column -->
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef>ROLE</th>
+        <td mat-cell *matCellDef="let post">
+            <div class="userr" *ngIf="!post.admin">
+                <fa-icon class="iconadmin u" [icon]="iconuser" ></fa-icon>
+                user
+            </div>
+            <div class="admin" *ngIf="post.admin">
+                <fa-icon class="iconadmin a" [icon]="iconadmin"></fa-icon>
+                admin
+            </div>
+    
+        </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let post">
+        <div *ngIf="!post.admin">
+            <fa-icon class="icn m" [icon]="iconmodify" routerLink="/editProfile/{{post.id}}"></fa-icon>
+            <fa-icon class="icn d" [icon]="icondelete" (click)="delete(post.id)"></fa-icon>
+        </div>
+        <div *ngIf="post.admin" class="avl">
+            Not available
+        </div>
+    </td>
+    </ng-container>
+  
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

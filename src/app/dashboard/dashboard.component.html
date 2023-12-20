@@ -1,0 +1,19 @@
+<div class="c container">
+    <div class="clist">
+        <ul class="desh-list">
+            <li (click) ="r=1" [class.clicked]="r==1">Games list</li>
+            <li (click) ="r=2" [class.clicked]="r==2">Add Game</li>
+            <li (click) ="r=3" [class.clicked]="r==3">Users</li>
+        </ul>
+    </div>
+    <div class="ccompt">
+        <div *ngIf="r==0" class="admin-alert">
+            <h1>only for admins</h1>
+            <hr>
+            The Admin Dashboard menu provides a centralized hub for managing critical aspects of the platform effortlessly. Here, the admin has the authority to add, modify, or delete games, ensuring a dynamic and curated gaming experience for users. Additionally, user management capabilities empower the admin to modify or delete user accounts as needed. To maintain system integrity, any changes or deletions made are irreversible, prioritizing security and stability while reinforcing accountability in managing the platform's content and user base.
+        </div>
+        <app-gameslist  *ngIf="r == 1"></app-gameslist>
+        <app-add-game   *ngIf="r == 2"></app-add-game>
+        <app-users      *ngIf="r == 3"></app-users>
+    </div>
+</div>

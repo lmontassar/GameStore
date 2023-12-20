@@ -1,0 +1,27 @@
+*{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+fa-icon.ng-fa-icon.icn.m {
+    font-size: 20px;
+    color: #006dff;
+    cursor: pointer;
+    margin: 0 15px;
+}
+fa-icon.ng-fa-icon.icn.d {
+    font-size: 20px;
+    color: #bc0f0f;
+    cursor: pointer;
+    margin: 0 15px;
+}
+table{
+    box-shadow: none;
+    min-width: 850px;
+}
+.mat-column-action{
+    width: 150px;
+}
+td{
+    padding : 5px 20px;
+}

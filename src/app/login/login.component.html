@@ -1,0 +1,32 @@
+<form class="container" #user="ngForm" (ngSubmit)="onSubmit(user.value)">
+    <h1>Login</h1>
+        <div class="alert alert-dismissible alert-danger" *ngIf="l">email or password uncorrect</div>
+        <div class="form-group">
+            <fieldset>
+            <label class="form-label mt-4" >Your Email*</label>
+            <input class="form-control"  type="email" placeholder="Email" name="email"
+            [(ngModel)]="user.value.email" #email="ngModel" 
+            [class.is-invalid]="email.touched && !teste( email.value )"
+            >
+            <div class="invalid-feedback">Please write a valid email</div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+            <label class="form-label mt-4" >Your Password</label>
+            <input class="form-control" type="password" placeholder="Password" name="password"
+            [(ngModel)]="user.value.password" #password="ngModel" 
+            [class.is-invalid]="password.touched && password.value == '' "
+            >
+            <div class="invalid-feedback">Please write a valid password</div>
+            </fieldset>
+        </div>
+        <br>
+        <div class="btns">
+            <button type="submit" class="btn btn-dark" 
+            [disabled]="!teste( email.value ) || password.value == '' "
+            >LOGIN</button>
+        </div>
+        <br>
+        
+</form>

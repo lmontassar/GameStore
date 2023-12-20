@@ -1,0 +1,27 @@
+<div class="container home">
+    <div class="title">
+        <h1>Your games</h1>
+        
+    </div>
+    <hr><br>
+
+    <div *ngIf="myGames.length == 0" class="alert-nogames">
+        <h1> there are no games available. </h1>
+         <hr> Please feel free to browse our selection online and select the games you desire from the comfort of your home
+    </div>
+
+    <div class="Categ" *ngIf="myGames.length != 0">
+        <h2>All Categories</h2>
+        <div class="Games-cont">
+            <div class="Game-div" *ngFor="let game of myGames;let i=index" routerLink="/game/{{game.id}}">
+                <div class="bgimg" ><img src="{{game.image}}" alt=""></div>
+                <div class="info">
+                  <div class="date">{{game.year}}</div>
+                  <div class="name" >{{game.name}} </div>
+                  <div class="price">{{game.price}}$</div>
+                  <div class="cart" >GET KEY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

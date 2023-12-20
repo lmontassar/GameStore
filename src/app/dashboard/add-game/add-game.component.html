@@ -1,0 +1,85 @@
+<form class="container" #gameForm="ngForm" (ngSubmit)="OnSubmit(gameForm.value)">
+    <h3>ADD GAME</h3>
+
+    <div class="two-form-group">
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4">Name*</label>
+                <input class="form-control" type="text" placeholder="Name" #name='ngModel' name="name"
+                    [(ngModel)]="gameForm.value.name" [class.is-invalid]=" name.touched && !testname(name.value)">
+                <div class="invalid-feedback">Please write a valid name</div>
+            </fieldset>
+        </div>
+
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4">DESCRIPTION*</label>
+                <textarea class="form-control" type="text" placeholder="Game's description" #description="ngModel"
+                    name="description" rows="5" [(ngModel)]="gameForm.value.description"
+                    [class.is-invalid]=" description.touched && !testname(description.value)"></textarea>
+                <div class="invalid-feedback">Please write a valid description</div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="four-form-group">
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4">PRICE *</label>
+                <input class="form-control" type="text" placeholder="Game's price en $" name="price" #price="ngModel"
+                    [(ngModel)]="gameForm.value.price" [class.is-invalid]="price.touched && !testprice(price.value)">
+                <div class="invalid-feedback">write a valid price</div>
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4">TYPE*</label>
+                <input class="form-control" type="text" placeholder="Game's type" name="type" #type="ngModel"
+                    [(ngModel)]="gameForm.value.type" [class.is-invalid]="type.touched && !testn(type.value)">
+                <div class="invalid-feedback">write a valid type</div>
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4">KEY*</label>
+                <input class="form-control" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" ngModel name="key"
+                    #key="ngModel" [(ngModel)]="gameForm.value.key"
+                    [class.is-invalid]="key.touched && !testkey(key.value)">
+                <div class="invalid-feedback">write a valid key</div>
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4">YEAR*</label>
+                <input class="form-control" type="text" placeholder="Game's year" ngModel name="year" #year="ngModel"
+                    [(ngModel)]="gameForm.value.year" [class.is-invalid]="year.touched && !testyear(year.value)">
+                <div class="invalid-feedback">write a valid year</div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <fieldset>
+            <label class="form-label mt-4">IMAGE*</label>
+            <input class="form-control" type="text" placeholder="Game's image url" ngModel name="image" #image="ngModel"
+                [(ngModel)]="gameForm.value.image" [class.is-invalid]="image.touched && !testImage(image.value)">
+            <div class="invalid-feedback">write a valid image url</div>
+        </fieldset>
+    </div>
+    <br>
+
+    <div class="btns">
+        <button type="reset" class="btn btn-danger">RESET</button>
+        <button type="submit" class="btn btn-dark"
+            [disabled]="!testImage(image.value) || !testyear(year.value) || !testkey(key.value) || !testn(type.value) || !testprice(price.value) || !testname(description.value) || !testname(name.value)">ADD
+            GAME</button>
+    </div>
+
+
+</form>

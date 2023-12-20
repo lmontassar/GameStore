@@ -1,0 +1,59 @@
+<form class="container" #card="ngForm" (ngSubmit)="onSubmit()">
+    <h1>BUY {{game.name}}</h1>
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4" >Card Number*</label>
+                <input class="form-control"  type="text" placeholder="0123XXXXXXXXXXXX" name="cardc"
+                [(ngModel)]="card.value.cardc" #c1="ngModel" 
+                [class.is-invalid]="c1.touched && !testCN(card.value.cardc)"
+                >
+                <div class="invalid-feedback">card number is invalid</div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4" >Name on the Card*</label>
+                <input class="form-control" type="text" placeholder="raphael jhon" name="cardname"
+                [(ngModel)]="card.value.cardname" #c2="ngModel" 
+                [class.is-invalid]="c2.touched && !testCName(card.value.cardname)"
+                >
+                <div class="invalid-feedback">name is invaild</div>
+            </fieldset>
+        </div>
+        <div class="form-group expd">
+            <fieldset>
+                <label class="form-label mt-4" >Expiry Date*</label> <br>
+                <input class="form-control " type="text" placeholder="08" name="month"
+                [(ngModel)]="card.value.month" #c3="ngModel" 
+                [class.is-invalid]="c3.touched && !testmonth(card.value.month)"
+                > / 
+                <input class="form-control " type="text" placeholder="2027" name="year"
+                [(ngModel)]="card.value.year" #c4="ngModel" 
+                [class.is-invalid]="c4.touched && !testyear(card.value.year)"
+                >
+                <div class="invalid-feedback">Date is invalid</div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="form-label mt-4" >Security Code*</label> 
+                <input class="form-control" type="password" placeholder="***"name="codes"
+                [(ngModel)]="card.value.codes" #c5="ngModel" 
+                [class.is-invalid]="c4.touched && !testcode(card.value.codes)"
+                >
+                <div class="invalid-feedback">security code is invalid</div>
+            </fieldset>
+        </div>
+        <br>
+        <div class="btns">
+            <button type="submit" class="btn btn-dark" 
+                [disabled]="
+                !testCN(card.value.cardc) || 
+                !testCName(card.value.cardname) || 
+                !testmonth(card.value.month) || 
+                !testyear(card.value.year) || 
+                !testcode(card.value.codes) "
+            >BUY {{game.price}} $</button>
+        </div>
+        
+</form>

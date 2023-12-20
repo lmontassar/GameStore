@@ -1,0 +1,26 @@
+<div class="container home">
+    <div class="title">
+        <h1>Suggested games</h1>
+        <div>
+            <div class="search-g">
+                <fa-icon [icon]="faicon"></fa-icon>
+                <input type="text" placeholder="search" (keyup)="search()"  [(ngModel)]="soe" >
+              </div>
+        </div>
+    </div>
+    <hr><br>
+    <div class="Categ">
+        <h2>All Categories</h2>
+        <div class="Games-cont">
+            <div class="Game-div" *ngFor="let game of Games;let i=index">
+                <div class="bgimg" routerLink="/game/{{game.id}}"><img src="{{game.image}}" alt=""></div>
+                <div class="info">
+                  <div class="date" routerLink="/game/{{game.id}}">{{game.year}}</div>
+                  <div class="name" routerLink="/game/{{game.id}}">{{game.name}} </div>
+                  <div class="price"routerLink="/game/{{game.id}}">{{game.price}}$</div>
+                  <div class="cart" (click)="addtocart(game.id,i)">{{ cartbtn[i] }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

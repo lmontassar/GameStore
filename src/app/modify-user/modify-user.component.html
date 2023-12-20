@@ -1,0 +1,58 @@
+<form class="container" #userForm="ngForm" (ngSubmit)="ngEdit(userForm.value)">
+    <h1>Modify account</h1>
+    <div class="form-group">
+        <fieldset>
+            <label class="form-label mt-4">Your First Name*</label>
+            <input class="form-control" minlength="3" type="text" placeholder="First Name"
+                [(ngModel)]="userForm.value.firstname" #firstname="ngModel" name="firstname"
+                [class.is-invalid]="firstname.touched && !testn( firstname.value ) ">
+            <div class="invalid-feedback">Please write a valid firstname</div>
+        </fieldset>
+    </div>
+    
+    <div class="form-group">
+        <fieldset>
+            <label class="form-label mt-4">Last Name*</label>
+            <input class="form-control" type="text" placeholder="Last Name" name="lastname"
+                [(ngModel)]="userForm.value.lastname" #lastname="ngModel"
+                [class.is-invalid]="lastname.touched && !testn( lastname.value ) ">
+            <div class="invalid-feedback">Please write a valid lastname</div>
+        </fieldset>
+    </div>
+
+
+    <div class="form-group">
+        <fieldset>
+            <label class="form-label mt-4">Email*</label>
+            <input class="form-control" type="email" placeholder="@Email" name="email" [(ngModel)]="userForm.value.email"
+                #email="ngModel" [class.is-invalid]="email.touched && !teste( email.value )">
+            <div class="invalid-feedback">Please write a valid email</div>
+        </fieldset>
+    </div>
+
+    <div class="form-group">
+        <fieldset>
+            <br>
+            <div *ngIf="!admin">
+                <label class="form-label mt-4">Admin</label>
+                <br>
+                <input type="checkbox" name="admin" ngModel>
+                <span class="checkbox-label"> Make this user an admin </span>
+                <br>
+                <span class="note">(You won't be able to modify this account after making this change)</span>
+            </div>
+            <div *ngIf="admin">
+                <span class="checkbox-label">this user an admin</span>
+                <br>
+                <span class="note">(You can't change the role)</span>
+            </div>
+        </fieldset>
+    </div>
+    <br>
+    <div class="btns">
+        <button type="reset" class="btn btn-danger">RESET</button>
+        <button type="submit" class="btn btn-dark"
+        [disabled]=' !testn( firstname.value ) || !testn( lastname.value ) || !teste( email.value ) '
+        >EDIT</button>
+    </div>
+</form>
