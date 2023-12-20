@@ -2,8 +2,8 @@
 link : https://gamestore-by-lmontassar.netlify.app
 
 accounts : 
-          ADMIN : email: 'montassar@lounissi.tn'  ,  password: 'Password7'
-          USER : email: 'oliver@example.com' ,      password: 'Password10'
+  ADMIN : email: 'montassar@lounissi.tn'  ,  password: 'Password7' 
+  USER : email: 'oliver@example.com' ,      password: 'Password10'
     
 
 
