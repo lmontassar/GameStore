@@ -6,7 +6,7 @@ Welcome to GameStore, an Angular 16 application designed for game enthusiasts to
 Demo
 ----
 
-Explore the live demo of the GameStore application [here](https://coruscating-sunburst-9567d0.netlify.app).
+Explore the live demo of the GameStore application [here](https://gamestore-bylmontassar.netlify.app/).
 
 ### Demo Accounts
 
