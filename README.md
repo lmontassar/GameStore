@@ -1,7 +1,7 @@
 GameStore Angular 16 Application
 ================================
 
-Welcome to GameStore, an Angular 16 application designed for game enthusiasts to explore and purchase game keys. This project serves as a demonstration of Angular 16 capabilities in creating dynamic and interactive web applications.
+Welcome to GameStore, an Angular 16 application designed for game enthusiasts to explore and purchase game keys. This project serves as a demonstration of Angular 16 capabilities in creating dynamic and interactive web applications. It is not responsive on phones..
 
 Demo
 ----
