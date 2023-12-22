@@ -6,7 +6,7 @@ Welcome to GameStore, an Angular 16 application designed for game enthusiasts to
 Demo
 ----
 
-Explore the live demo of the GameStore application [here](https://gamestore-by-lmontassar.netlify.app/login).
+Explore the live demo of the GameStore application [here](https://gamestore-by-lmontassar.netlify.app).
 
 ### Demo Accounts
 
