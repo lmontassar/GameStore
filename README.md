@@ -36,3 +36,5 @@ This application is a personal project aimed at enhancing technical skills throu
 
 This project represents a foundational step in honing technical expertise and understanding the intricacies of Angular 16 development. Feel free to explore, contribute, or provide feedback!
 
+## Video
+https://github.com/user-attachments/assets/f4f03689-aa9b-4711-8dec-69e44ac47390
